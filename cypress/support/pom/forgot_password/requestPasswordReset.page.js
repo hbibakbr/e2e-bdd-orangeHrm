@@ -12,12 +12,20 @@ class RequestPasswordResetPage {
         return cy.get('input[name="username"]')
     }
 
-    static clickResetPasswordButton () {
+    static clickCancelButton () {
         return cy.get('button[class="oxd-button oxd-button--large oxd-button--ghost orangehrm-forgot-password-button orangehrm-forgot-password-button--cancel"]').click()
     }
 
-    static clickCancelButton () {
+    static clickResetPasswordButton () {
         return cy.get('button[class="oxd-button oxd-button--large oxd-button--secondary orangehrm-forgot-password-button orangehrm-forgot-password-button--reset"]').click()
+    }
+
+    static verifyErrorField () {
+        return cy.get('input[class="oxd-input oxd-input--active oxd-input--error"]').should('be.visible');
+    }
+
+    static verifyErrorFieldMessage () {
+        return cy.get('span[class="oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message"]').should('have.text', 'Required');
     }
 }
 

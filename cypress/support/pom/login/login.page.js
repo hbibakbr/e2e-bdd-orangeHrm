@@ -1,4 +1,7 @@
 class LoginPage {
+    static verifyPageUrl () {
+        return cy.url().should('include', '/auth/login');
+    }
 
     static inputUsername () { // static version
         return cy.get('input[name="username"]');
@@ -10,6 +13,10 @@ class LoginPage {
 
     static clickLoginButton () {
         return cy.get('button[type="submit"]').click()
+    }
+
+    static clickForgotPassword () {
+        return cy.get('p[class="oxd-text oxd-text--p orangehrm-login-forgot-header"]').click()
     }
 
     static verifyLoginPageTitle () {

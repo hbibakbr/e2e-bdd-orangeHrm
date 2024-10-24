@@ -1,12 +1,12 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 import LoginPage from "../../pom/login/login.page";
 
-Given('I visit the url', () => {
+Given('I visit the login page', () => {
     cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
-    cy.url().should('include', '/auth/login');
+    LoginPage.verifyPageUrl();
 })
 
-When('I should see login page', () => {
+When('I should see login page title', () => {
     LoginPage.verifyLoginPageTitle();
 })
 

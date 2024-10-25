@@ -29,12 +29,12 @@ The project includes login, forget password, and user management on the admin pa
    - As a user, I can cancel reset an password
    - As a user, I failed reset an password with empty username
 
-## Admin - Add System User
+### Admin - Add System User
 **Scenario**
    - As a user, I can add a user
    - As a user, I failed add user with same username
 
-## Admin - View System User
+### Admin - View System User
 **Scenario**
    - As a user, I can search user by username
    - As a user, I can search user by user role Admin

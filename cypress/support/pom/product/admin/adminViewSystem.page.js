@@ -48,24 +48,53 @@ class AdminViewSystemPage {
     }
 
     static clickAddButton () {
-        return cy.get('//button[text()=" Add "]')
+        return cy.xpath('//button[text()=" Add "]').click()
     }
 
-    static verifyUsername () {
-        return cy.xpath('(//div[@class= "oxd-table-cell oxd-padding-cell"])[2]').should('contain.text', 'dhinakaran')
+    static verifyUsername (username) {
+        return cy.xpath('(//div[@class= "oxd-table-cell oxd-padding-cell"])[2]').should('contain.text', username)
     }
 
     static verifyUserRoleAdmin () {
         return cy.xpath('(//div[@class= "oxd-table-cell oxd-padding-cell"])[3]').should('contain.text', 'Admin')
     }
 
-    static verifyEmployeeName () {
-        return cy.xpath('(//div[@class= "oxd-table-cell oxd-padding-cell"])[4]').should('contain.text', 'Thanura Meegoda')
+    static verifyEmployeeName (employeeName) {
+        return cy.xpath('(//div[@class= "oxd-table-cell oxd-padding-cell"])[4]').should('contain.text', employeeName)
     }
 
     static verifyStatusEnabled () {
         return cy.xpath('(//div[@class= "oxd-table-cell oxd-padding-cell"])[5]').should('contain.text', 'Enabled')
     }
+
+    static clickDeleteIcon () {
+        return cy.xpath('(//button[contains(@class, "oxd-icon-button oxd-table-cell-action-space")]//i[contains(@class, "bi-trash")])[2]').click()
+    }
+
+    static verifyDeletePopUpTitle () {
+        return cy.get('p[class="oxd-text oxd-text--p oxd-text--card-title"]').should('be.visible');
+    }
+
+    static clickDeleteButton () {
+        return cy.get('button[class="oxd-button oxd-button--medium oxd-button--label-danger orangehrm-button-margin"]').click()
+    }
+
+    static verifySuccessDeleteUser () {
+        return cy.xpath('//p[text()="Successfully Deleted"]').should('be.visible');
+    }
+
+    static selectFirstUser () {
+        return cy.xpath('(//div[@class= "oxd-table-cell oxd-padding-cell"])[7]').click();
+    }
+
+    static selectSecoundUser () {
+        return cy.xpath('(//div[@class= "oxd-table-cell oxd-padding-cell"])[13]').click();
+    }
+
+    static clickDeleteSelectedButton () {
+        return cy.xpath('//button[text()=" Delete Selected "]').click();
+    }
+
 }
 
 export default AdminViewSystemPage;

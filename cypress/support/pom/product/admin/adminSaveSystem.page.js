@@ -35,12 +35,12 @@ class AdminSaveSystemPage {
         return cy.xpath('(//input[contains(@class, "oxd-input oxd-input--active")])[2]');
     }
 
-    static inputPasswordd () {
-        return cy.xpath('(//input[contains(@class, "oxd-input oxd-input--active")])[3]');
+    static inputPassword () {
+        return cy.xpath('(//div[contains(@class, "oxd-input-group oxd-input-field-bottom-space")])[5]');
     }
 
     static inputConfirmPassword () {
-        return cy.xpath('(//input[contains(@class, "oxd-input oxd-input--active")])[4]');
+        return cy.xpath('(//div[contains(@class, "oxd-input-group oxd-input-field-bottom-space")])[6]');
     }
 
     static clickSaveButton () {
@@ -48,7 +48,15 @@ class AdminSaveSystemPage {
     }
 
     static clickCancelButton () {
-        return cy.get('button[class="oxd-button oxd-button--medium oxd-button--ghost"]');
+        return cy.get('button[class="oxd-button oxd-button--medium oxd-button--ghost"]').click();
+    }
+
+    static verifySuccessAddUser () {
+        return cy.get('div[class="oxd-toast oxd-toast--success oxd-toast-container--toast"]').should('be.visible');
+    }
+
+    static verifyAlreadyExistsMessage () {
+        return cy.xpath('//span[text()="Already exists"]').should('exist')
     }
 }
 

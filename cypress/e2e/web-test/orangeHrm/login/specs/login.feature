@@ -12,7 +12,7 @@ Feature: Login Test Feature OrangeHrm
             | username       | password             |
             | Admin          | admin123             |
     
-    Scenario: As a user, I cannot login with username: <username> and password: <password>
+    Scenario: As a user, I failed login with username: <username> and password: <password>
         Given I visit the login page
         And I should see login page title
         When I submit the invalid username "<username>"

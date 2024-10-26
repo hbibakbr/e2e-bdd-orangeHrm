@@ -9,7 +9,7 @@ Repository for Project Task Sanbercode Quality Assurance Engineer Bootcamp. This
 The project includes login, forget password, and user management on the admin page. The website used as the study case is [OrangeHrm](https://opensource-demo.orangehrmlive.com/web/index.php/auth/login). The goal of this project is to provide automated test cases for common user interactions on the OrangeHRM website, ensuring robust and reliable functionality. All scripts are built using the Cucumber framework and implement Page Object Model (POM) for better structure and maintenance.
 
 ## Demo Testing
-
+[![Demo Proyek](demo-img.jpg)](https://www.youtube.com/watch?v=kvsY2LL6Tl0)
 
 ## Feature
 ### Login Test

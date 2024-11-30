@@ -4,6 +4,7 @@ class LoginPage {
     }
 
     static inputUsername () { // static version
+        // const username = 'input[name="username"]'
         return cy.get('input[name="username"]');
     }
 

@@ -17,5 +17,8 @@
   "cypress-cucumber-preprocessor": {
     "step_definitions": "cypress/support/step_definitions/login/",
     "nonGlobalStepDefinitions": false
+  },
+  "dependencies": {
+    "e2e-bdd-test": "file:"
   }
 }
